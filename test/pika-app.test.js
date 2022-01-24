@@ -1,17 +1,16 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 
-import { PikaApp } from '../src/PikaApp.js';
-import '../src/pika-app.js';
+import '../src/pika-js.js';
 
-describe('PikaApp', () => {
-  let element: PikaApp;
+describe('PikaJs', () => {
+  let element;
   beforeEach(async () => {
-    element = await fixture(html`<pika-app></pika-app>`);
+    element = await fixture(html`<pika-js></pika-js>`);
   });
 
   it('renders a h1', () => {
-    const h1 = element.shadowRoot!.querySelector('h1')!;
+    const h1 = element.shadowRoot.querySelector('h1');
     expect(h1).to.exist;
     expect(h1.textContent).to.equal('My app');
   });
